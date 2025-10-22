@@ -13,3 +13,7 @@ def formulario(request):
     return render(request,"inicio/formulario.html")
 
 
+def ejemplo(request):
+    return render(request,"inicio/ejemplo.html")
+
+
