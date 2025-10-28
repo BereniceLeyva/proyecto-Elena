@@ -8,23 +8,14 @@
 {%block info%}
     Contacto<span>contactanos</span>
 {%endblock%}
-
-{% block contenido%}
-<!-- Contenido Principal-->
-	 	<div class="page-content">
-
-
+{%block encabezado%}
 			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
 					<h3>Contacto
 				    <small>Ingresa tus datos</small></h3>
-				</div>
-
-				
-				
-			</div>
 			<!-- /Encabezado-->
+			 {%endblock%}
+{% block contenido%}
+			
 
 			<!-- Formulario -->
 			<form class="form-horizontal" action="#" role="form">
@@ -53,6 +44,5 @@
 				</div>
 			</form>
 		<!-- Fin del Formulario -->
-		</div>
-		<!-- /Contenido Principal-->
+		
 {%endblock%}
