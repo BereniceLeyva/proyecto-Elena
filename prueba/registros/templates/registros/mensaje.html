@@ -1,0 +1,47 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} COMENTARIOS {% endblock %}
+
+{%block imagen%}
+    {%load static%}
+    {%static 'inicio/images/home.png'%}
+{%endblock%}
+
+{%block info%}
+    Comentarios<span>DSM</span>
+{%endblock%}
+{%block encabezado%}
+	<!--Encabezdo -->
+	<h3>Comentarios
+	<small>Lista de Comentarios </small></h3>
+	<!-- /Encabezado-->
+{%endblock%}
+{% block contenido%}
+<!--Tabla de alumnos-->
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Usuario</th>
+			<th>Mensaje</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+       {%for com in comentario%} 
+		<tr>
+			<td class="text-semibold">{{com.usuario}}</td>
+			<td class="muted">{{com.mensaje}}</td>
+			<td class="muted">
+    			<a href="{% url 'Editar' com.id %}">Editar</a>
+			</td>
+			<td Class="muted">
+				<a href="{%url 'Eliminar' com.id %}">Eliminar</a>
+			</td>
+		</tr>
+       {%endfor%}
+	</tbody>
+</table>
+<!--tabla de alumnos-->
+			
+{%endblock%}

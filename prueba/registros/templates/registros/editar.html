@@ -1,0 +1,23 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %}Editar Comentario{% endblock %}
+
+{% block contenido %}
+<h3>Editar Comentario</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <label>Usuario:</label>
+    <input type="text" name="usuario" value="{{ comentario.usuario }}" class="form-control">
+
+    <label>Mensaje:</label>
+    <textarea name="mensaje" class="form-control">{{ comentario.mensaje }}</textarea>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="{% url 'Mensaje' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock %}
